@@ -1,0 +1,26 @@
+## Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+## SPDX-License-Identifier: MIT-0
+
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: List Lambda provisioned reserved
+
+
+Resources:                
+  ListFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: lambda.lambda_handler
+      Runtime: python3.10
+      Architectures: [arm64]
+      Timeout: 900
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - lambda:GetFunctionConcurrency
+                - lambda:ListFunctions
+                - lambda:ListProvisionedConcurrencyConfigs
+              Resource: "*"

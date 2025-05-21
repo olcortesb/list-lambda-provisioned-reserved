@@ -1,0 +1,10 @@
+version = 0.1
+[default.deploy.parameters]
+stack_name = "ListLambdaProvisionedReserver"
+resolve_s3 = true
+s3_prefix = "ListLambdaProvisionedReserver"
+region = "your-region"
+profile = "you-aws-profile"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
