@@ -40,10 +40,16 @@ The application consists of a single Lambda function that:
    profile = "your-aws-profile"
    ```
 
-3. Deploy the application using SAM CLI:
+3. Configure the target account
+   ```
+   # If need other region change this parameter
+   region = os.environ['AWS_REGION']
+   ```
+
+4. Deploy the application using SAM CLI:
    ```
    sam build
-   sam deploy
+   sam deploy --profile <you-aws-profile>          
    ```
 
 ## Usage
@@ -89,4 +95,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## References
 
+- https://github.com/olcortesb/list-lambda-provisioned-reserved 
+- https://docs.aws.amazon.com/es_es/lambda/latest/dg/provisioned-concurrency.html 
 - https://repost.aws/knowledge-center/lambda-provisioned-reserved-concurrency 
