@@ -86,3 +86,7 @@ This project is licensed under the MIT-0 License. See the LICENSE file for detai
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+## References
+
+- https://repost.aws/knowledge-center/lambda-provisioned-reserved-concurrency 

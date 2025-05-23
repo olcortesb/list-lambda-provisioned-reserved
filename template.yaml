@@ -23,4 +23,5 @@ Resources:
                 - lambda:GetFunctionConcurrency
                 - lambda:ListFunctions
                 - lambda:ListProvisionedConcurrencyConfigs
+                - lambda:ListAliases
               Resource: "*"

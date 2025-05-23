@@ -1,10 +1,9 @@
-import json
 import os
 import boto3
 
 def lambda_handler(event, context):
     # Select the region you would like to list function concurrency
-    # region = "eu-central-1"
+    # The default region is the deployment region
     region = os.environ['AWS_REGION']
 
     lambda_client = boto3.client('lambda', region_name=region)
@@ -37,7 +36,7 @@ def lambda_handler(event, context):
                 if 'ReservedConcurrentExecutions' in response:
                     count += 1
                     reserved_concurrency = response['ReservedConcurrentExecutions']
-                    print(f"{count}. Function Name: {function_name}, Reserved Concurrency: {reserved_concurrency}")
+                    print(f"{count}. Function Name: {function_name}, Reserved Concurrency: {reserved_concurrency}")  
 
             except lambda_client.exceptions.ResourceNotFoundException:
                 # If the function is not found, skip it
